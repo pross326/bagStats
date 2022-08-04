@@ -58,9 +58,9 @@
     name: "homePage",
     data: () => ({
         leftNav: [
+            "Feed",
             "New Release",
             "Top Rated",
-            "My Bags",
             
         ]
     }),

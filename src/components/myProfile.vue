@@ -1,31 +1,90 @@
- <template>
- <div>
- <siteHeader />
+<template>
+  <div>
+    <v-app id="inspire">
+      <v-main class="grey lighten-3">
+        <v-container>
+          <v-row>
+            <v-col cols="2" dense>
+              <v-sheet rounded="lg">
+                <v-list color="transparent">
+                  <v-list-item v-for="k in leftNav" :key="k" link>
+                    <v-list-item-content>
+                      <v-list-item-title>
+                        {{ k }}
+                      </v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
 
-      <v-card class="mx-auto" max-width="434" tile>
-          <v-img height="100%" src="https://cdn.vuetifyjs.com/images/cards/server-room.jpg"></v-img>
-          <v-col>
-            <v-avatar size="100" style="position:absolute; top: 130px">
-              <v-img src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"></v-img>
-            </v-avatar>
-          </v-col>
-            <v-list-item color="rgba(0, 0, 0, .4)">
-              <v-list-item-content>
-                <v-list-item-title class="title">Marcus Obrien</v-list-item-title>
-                <v-list-item-subtitle>Network Engineer</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-      </v-card>
-      </div>
-    </template>
+                  <v-divider class="my-2"></v-divider>
+
+                  <v-list-item link color="grey lighten-4">
+                    <v-list-item-content>
+                      <v-list-item-title> Refresh </v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-list>
+              </v-sheet>
+            </v-col>
+            <v-col>
+            
+                <v-card
+                  class="mx-auto py-5 pt-12 px-5 text-center"
+                  height="80vh"
+                  elevation="10"
+                  width="75vw"
+                  rounded="xl"
+                >
+                  <v-avatar color="primary" size="200"></v-avatar>
+                  <v-card-title class="text-h2 mb-5 mt-5 justify-center" >
+                    {{ this.player.name }}
+                  </v-card-title>
+                  <v-container fluid>
+                    <v-row dense class="justify-space-around">
+                      <v-col v-for="card in cards" :key="card.title" :cols="3">
+                        <v-card elevation="7" rounded="xl">
+                          <!-- <v-card-title
+                            class="text-h3 justify-center"
+                            v-text="card.amount"
+                          ></v-card-title> -->
+                          <v-avatar
+                          :color='card.color'
+                          size="120"
+                          class="my-5">
+                          <v-text class="text-h3">{{card.amount}}</v-text>
+                          </v-avatar>
+                          <v-card-title
+                            class="text-h4 justify-center"
+                            v-text="card.title"
+                          ></v-card-title>
+                        </v-card>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-card>
+
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
+</template>
 <script>
-import siteHeader from './siteHeader.vue';
 export default {
-    name: "myProfile",
-    components: { siteHeader }
-}
+  name: "myProfile",
+  data: () => ({
+    leftNav: ["My Bags", "My Reviews"],
+    player: {
+      name: "Paul Ross",
+    },
+    cards: [
+      { title: "Sets of Bags", amount: 4, color: '#82a5e540' },
+      { title: "Reviews", amount: 3, color: 'purple' },
+      { title: "Transactions", amount: 2, color: 'red' },
+    ],
+  }),
+  components: {},
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

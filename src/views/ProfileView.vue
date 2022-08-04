@@ -1,9 +1,7 @@
 <template>
 <div>
-<h2>hey</h2>
 <myProfile />
 </div>
-  
 </template>
 
 <script>

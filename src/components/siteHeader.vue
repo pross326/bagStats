@@ -43,7 +43,7 @@ export default {
     name: 'siteHeader',
      data: () => ({
         links: [
-            { text: "Home", link: "/home" },
+            { text: "Home", link: "/" },
             { text: "Profile", link: "/Profile" },
         ],
 })}
