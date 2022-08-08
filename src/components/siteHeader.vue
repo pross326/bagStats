@@ -3,7 +3,7 @@
   <v-app-bar
       app
       color="primary white--text"
-      flat
+      
     >
       <v-container class="py-0 fill-height">
         <v-avatar
