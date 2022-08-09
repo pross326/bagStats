@@ -5,8 +5,8 @@
     <div>
       <router-view/>
     </div>
-    <SiteFooter />
     </v-main>
+    <SiteFooter />
   </v-app>
 </template>
 
