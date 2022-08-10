@@ -13,7 +13,7 @@
       grow
       icons-and-text
     >
-      <v-tab v-for="tab in tabs" :key="tab">
+      <v-tab v-for="tab in tabs" :key="tab" @click="selected = tab.tabName">
         <v-icon>{{ tab.icon }}</v-icon>
         {{ tab.title }}
       </v-tab>
@@ -22,13 +22,17 @@
     <v-tabs-items v-model="tab" >
       <v-tab-item v-for="tab in tabs" :key="tab">
         <v-divider></v-divider>
-        <myBags />
+        <component :is="selected"></component>
       </v-tab-item>
     </v-tabs-items>
   </v-card>
 </template>
 <script>
 import myBags from "../components/myBags.vue";
+import myReviews from "../components/myReviews.vue";
+import myTransactions from "../components/myTransactions.vue";
+
+
 export default {
   name: "myProfile",
   data: () => ({
@@ -36,14 +40,14 @@ export default {
       name: "Paul Ross",
     },
     tabs: [
-      { title: "My Bags", icon: "mdi-square-rounded" },
-      { title: "Reviews", icon: "mdi-message-draw" },
-      { title: "Transactions", icon: "mdi-account-switch-outline" },
+      { title: "My Bags", icon: "mdi-square-rounded", tabName: 'myBags' },
+      { title: "Reviews", icon: "mdi-message-draw", tabName: 'myReviews'},
+      { title: "Transactions", icon: "mdi-account-switch-outline", tabName: 'myTransactions' },
     ],
-
+    selected: 'myBags',
     tab: null,
   }),
-  components: { myBags },
+  components: { myBags, myReviews, myTransactions },
 };
 </script>
 
