@@ -30,7 +30,7 @@
 <script>
 import myBags from "../components/myBags.vue";
 import myReviews from "../components/myReviews.vue";
-import myTransactions from "../components/myTransactions.vue";
+import myFriends from "./myFriends.vue";
 
 
 export default {
@@ -40,14 +40,14 @@ export default {
       name: "Paul Ross",
     },
     tabs: [
-      { title: "My Bags", icon: "mdi-square-rounded", tabName: 'myBags' },
+      { title: "Bags", icon: "mdi-square-rounded", tabName: 'myBags' },
       { title: "Reviews", icon: "mdi-message-draw", tabName: 'myReviews'},
-      { title: "Transactions", icon: "mdi-account-switch-outline", tabName: 'myTransactions' },
+      { title: "Friends", icon: "mdi-human-greeting-variant", tabName: 'myFriends' },
     ],
     selected: 'myBags',
     tab: null,
   }),
-  components: { myBags, myReviews, myTransactions },
+  components: { myBags, myReviews, myFriends },
 };
 </script>
 

@@ -37,14 +37,13 @@
               <v-col cols="12" class="d-flex justify-center">
                 <v-col cols="6">
                   <v-file-input
-                  v-model="bagImage"
+                    v-model="bagImage"
                     accept="image/*"
                     label="File input"
                     dense
                     chips
                   ></v-file-input>
                 </v-col>
-
               </v-col>
             </v-row>
           </v-container>
@@ -52,12 +51,10 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog = !dialog">
+          <v-btn color="blue darken-1" text @click="this.dialog = !this.dialog">
             Close
           </v-btn>
-          <v-btn color="blue darken-1" text @click="addBag">
-            Save
-          </v-btn>
+          <v-btn color="blue darken-1" text @click="addBag()"> Save </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -67,23 +64,24 @@
 <!--bagSelection, bagName, bagImage  -->
 
 <script>
-
 export default {
   name: "addBags",
-  props: [ 'bags'],
-  data: () => ({
-    rating: null,
-    items: ["BG", "Lucky Bags", "Black Sheep Baggers", "Sure Fires", "Other"],
-  }),
+  data: () => {
+    return {
+      rating: null,
+      dialog: false,
+      items: ["BG", "Lucky Bags", "Black Sheep Baggers", "Sure Fires", "Other"],
+    };
+  },
   methods: {
     addBag() {
       const newBag = {
-        name : this.bagSelection,
+        name: this.bagSelection,
         type: this.bagName,
-        imageSrc: this.bagImage
+        imageSrc: this.bagImage,
       };
-      this.bags.push(newBag);
-      console.log(this.bags);
+      console.log(newBag);
+      this.dialog = false;
     },
   },
 };

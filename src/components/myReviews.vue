@@ -33,7 +33,7 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-spacer></v-spacer>
-                <v-btn color="accent" text>{{
+                <v-btn @click="review.hidden = !review.hidden" color="accent" text>{{
                   review.hidden ? "Show Review" : "Hide Review"
                 }}</v-btn>
                 <v-spacer></v-spacer>

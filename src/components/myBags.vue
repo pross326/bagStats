@@ -1,6 +1,6 @@
 <template>
   <v-container fluid py-10 style="width: 80vw">
-  <addBags :bags="bags" />
+  <addBags />
           <v-row style="width: 80vw">
             <v-col v-for="bag in bags" :key="bag" cols="3">
               <v-card rounded="xl" elevation="5" class="ma-auto">
@@ -77,8 +77,10 @@ export default {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkBtSuuz5d59iFgPRsG_fILsbaoYRp7CAlrD95FbA5oVVc9UhlWrPhnuxOUXsfQicJ4HI&usqp=CAU",
         rating: 4.7,
       }
-      ]
+      ],
+      
 }),
+
   components: { addBags,},
 };
 </script>

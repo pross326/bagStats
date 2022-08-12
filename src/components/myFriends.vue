@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2>transactions</h2>
+    <h2>Friends List Coming</h2>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'myTransactions',
+    name: 'myFriends',
     data: () => ({
 
     })
