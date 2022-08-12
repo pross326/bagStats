@@ -1,5 +1,6 @@
 <template>
   <v-container fluid py-10 style="width: 80vw">
+  <addBags :bags="bags" />
           <v-row style="width: 80vw">
             <v-col v-for="bag in bags" :key="bag" cols="3">
               <v-card rounded="xl" elevation="5" class="ma-auto">
@@ -34,6 +35,8 @@
 </template>
 
 <script>
+
+import addBags from '../components/addBags.vue'
 
 export default {
     name: 'myBags',
@@ -76,7 +79,7 @@ export default {
       }
       ]
 }),
-  components: {},
+  components: { addBags,},
 };
 </script>
 
