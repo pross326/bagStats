@@ -123,7 +123,7 @@ export default {
         },
       ],
       dialog: false,
-      items: ["BG", "Lucky Bags", "Black Sheep Baggers", "Sure Fires", "Other"],
+      items: ["BG", "Lucky Bags", "Black Sheep Baggers", "Sure Fires", "Reynolds", "Other"],
     };
   },
   methods: {
@@ -131,11 +131,25 @@ export default {
       const newBag = {
         name: this.bagSelection,
         type: this.bagName,
-        imageSrc: this.bagImage,
+        imageSrc: this.bagImages(this.bagSelection)
       };
       this.bags.push(newBag);
       this.dialog = false;
     },
+    bagImages(bag) {
+      if (bag == "BG") {
+        this.imageSrc = "https://cdn.shopify.com/s/files/1/0278/4539/4568/files/BG_Round_logo_360x.jpg?v=1630621484"
+        return this.imageSrc
+      }
+      if (bag == 'Viper-C'){
+        this.imageSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkBtSuuz5d59iFgPRsG_fILsbaoYRp7CAlrD95FbA5oVVc9UhlWrPhnuxOUXsfQicJ4HI&usqp=CAU"
+        return this.imageSrc
+      }
+      if (bag == 'Reynolds'){
+        this.imageSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAEeKUpBZNmBohW3xzwytCx8JuSVRnZAEBWD6Gj87cdg&s"
+        return this.imageSrc
+      }
+    }
   },
 
   components: {},
